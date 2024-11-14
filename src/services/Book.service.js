@@ -116,3 +116,5 @@ class BookService {
     }
   }
 }
+
+export { BookService };
