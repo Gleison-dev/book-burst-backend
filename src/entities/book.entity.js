@@ -28,3 +28,5 @@ const BookEntity = sequelize.define("tb_books", {
     allowNull: false,
   },
 });
+
+export { BookEntity };
