@@ -29,3 +29,5 @@ const testConnection = async () => {
     );
   }
 };
+
+export { sequelize, testConnection };
