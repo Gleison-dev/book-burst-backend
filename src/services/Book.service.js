@@ -38,12 +38,12 @@ class BookService {
 
   async getBookByTitle(title) {
     try {
-      const verififyBookTitle = await BookEntity.findOne({
+      const verifyBookTitle = await BookEntity.findOne({
         where: {
           title,
         },
       });
-      if (!verififyBookTitle) {
+      if (!verifyBookTitle) {
         return `${ERRORS.NOT_FOUND}`;
       }
       const bookByTitle = await BookEntity.findAll({
@@ -52,6 +52,65 @@ class BookService {
         },
       });
       return bookByTitle;
+    } catch (error) {
+      return console.error(error);
+    }
+  }
+
+  async getBookByWriter(writer) {
+    try {
+      const verifyBookWriter = await BookEntity.findOne({
+        where: {
+          writer,
+        },
+      });
+      if (!verifyBookWriter) {
+        return `${ERRORS.NOT_FOUND}`;
+      }
+      const bookByWriter = await BookEntity.findAll({
+        where: {
+          writer,
+        },
+      });
+      return bookByWriter;
+    } catch (error) {
+      return console.error(error);
+    }
+  }
+
+  async getBookByGenre(genre) {
+    try {
+      const verifyBookGenre = await BookEntity.findOne({
+        where: {
+          genre,
+        },
+      });
+      if (!verifyBookGenre) {
+        return `${ERRORS.NOT_FOUND}`;
+      }
+      const bookByGenre = await BookEntity.findAll({
+        where: {
+          genre,
+        },
+      });
+      return bookByGenre;
+    } catch (error) {
+      return console.error(error);
+    }
+  }
+
+  async deleteBookService(id) {
+    try {
+      const verifyBookId = await BookEntity.findByPk(id);
+      if (!verifyBookId) {
+        return `${ERRORS.NOT_FOUND}`;
+      }
+      const deleteBook = await BookEntity.destroy({
+        where: {
+          id,
+        },
+      });
+      return `${SUCESS.DELETED}`;
     } catch (error) {
       return console.error(error);
     }
