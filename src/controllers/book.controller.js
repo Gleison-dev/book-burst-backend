@@ -3,13 +3,14 @@ import { BookService } from "../services/Book.service.js";
 const instanceBookService = new BookService();
 
 const createBook = async (req, res) => {
-  const { title, writer, genre, synopsis, year_release } = req.body;
+  const { title, writer, genre, synopsis, year_release, link } = req.body;
   const newBook = await instanceBookService.createBookService(
     title,
     writer,
     genre,
     synopsis,
-    year_release
+    year_release,
+    link
   );
   res.status(201).json({ newBook });
 };
