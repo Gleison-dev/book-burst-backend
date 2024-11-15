@@ -27,6 +27,10 @@ const BookEntity = sequelize.define("tb_books", {
     type: DataTypes.INTEGER,
     allowNull: false,
   },
+  link: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
 });
 
 export { BookEntity };
