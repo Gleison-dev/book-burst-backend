@@ -15,6 +15,6 @@ bookRoute.get("/books", getAllBooks);
 bookRoute.get("/bookByGenre", getBookByGenre);
 bookRoute.get("/bookByTitle", getBookByTitle);
 bookRoute.get("/bookByWriter", getBookByWriter);
-bookRoute.delete("/deleteBook/:id", deleteBook);
+bookRoute.delete("/deleteBook", deleteBook);
 
 export { bookRoute };
