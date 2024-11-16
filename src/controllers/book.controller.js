@@ -27,19 +27,19 @@ const getBookByTitle = async (req, res) => {
 };
 
 const getBookByWriter = async (req, res) => {
-  const { writer } = req.body;
+  const { writer } = req.query;
   const bookByWriter = await instanceBookService.getBookByWriter(writer);
   res.json({ bookByWriter });
 };
 
 const getBookByGenre = async (req, res) => {
-  const { genre } = req.body;
+  const { genre } = req.query;
   const bookByGenre = await instanceBookService.getBookByGenre(genre);
   res.json({ bookByGenre });
 };
 
 const deleteBook = async (req, res) => {
-  const { id } = req.params;
+  const { id } = req.query;
   const deletedBook = await instanceBookService.deleteBookService(id);
   res.json({ deletedBook });
 };
