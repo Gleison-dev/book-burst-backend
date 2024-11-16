@@ -17,14 +17,23 @@ const BookEntity = sequelize.define("tb_books", {
   writer: {
     type: DataTypes.STRING,
     allowNull: false,
+    set(value) {
+      this.setDataValue("title", value.toLowerCase());
+    },
   },
   genre: {
     type: DataTypes.STRING,
     allowNull: false,
+    set(value) {
+      this.setDataValue("title", value.toLowerCase());
+    },
   },
   synopsis: {
     type: DataTypes.TEXT,
     allowNull: false,
+    set(value) {
+      this.setDataValue("title", value.toLowerCase());
+    },
   },
   year_release: {
     type: DataTypes.INTEGER,
