@@ -10,6 +10,9 @@ const BookEntity = sequelize.define("tb_books", {
   title: {
     type: DataTypes.STRING,
     allowNull: false,
+    set(value) {
+      this.setDataValue("title", value.toLowerCase());
+    },
   },
   writer: {
     type: DataTypes.STRING,
