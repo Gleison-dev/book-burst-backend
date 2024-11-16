@@ -13,7 +13,7 @@ const bookRoute = Router();
 bookRoute.post("/createBook", createBook);
 bookRoute.get("/books", getAllBooks);
 bookRoute.get("/bookByGenre", getBookByGenre);
-bookRoute.get("/bookByTitle", getBookByTitle);
+bookRoute.get("/bookByTitle/:title", getBookByTitle);
 bookRoute.get("/bookByWriter", getBookByWriter);
 bookRoute.delete("/deleteBook/:id", deleteBook);
 
